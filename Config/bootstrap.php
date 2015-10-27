@@ -73,7 +73,9 @@ Cache::config('default', array('engine' => 'File'));
  */
  
 CakePlugin::load('DebugKit');
-Configure::write('Company.name', 'Company');
+CakePlugin::load('UploadPack');
+Configure::write('Company.name', 'ComfyStudio');
+Configure::write('Developer.name', 'ComfyStudio');
 Configure::write('App.defaultEmail', 'will_byrne56@hotmail.com');
 
 /**

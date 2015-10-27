@@ -63,7 +63,7 @@ if (!defined('APP_DIR')) {
  * /lib/Cake/Console/Templates/skel/webroot/index.php
  */
 //define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'lib');
-define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'cakephp_2.3.5' . DS. 'lib');
+define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'cakephp-2.4.7' . DS. 'lib');
 
 /**
  * Editing below this line should NOT be necessary.

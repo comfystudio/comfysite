@@ -36,7 +36,8 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><?php echo $this->Html->link('Edit',
-                                array('plugin' => 'users', 'controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id')),
+                                //array('plugin' => 'users', 'controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id')),
+                                array('controller' => 'adminusers', 'action' => 'edit', $this->Session->read('Auth.User.id')),
                                 array('class' => 'icon icon-edit')); ?>
                             </li>
                             <li><?php echo $this->Html->link(__('Logout'), '/admin/logout', array('class' => 'icon icon-logout')); ?></li>
@@ -53,10 +54,10 @@
         <?php echo $this->Session->flash(); ?>
         <?php echo $this->Session->flash('auth'); ?>
         <ul style="clear:both;" class="nav nav-tabs">
-<!--             <li class="<?php //echo $this->Html->highlight('/^\/admin\/photo_manager/'); ?>">
-                <?php //echo $this->Html->link('Photo Manager', array('plugin' => 'photo_manager', 'controller' => 'photos', 'action' => 'index', 'admin' => true), array('class' => 'icon icon-pictures-alt-2')); ?>
+            <li class="<?php echo $this->Html->highlight2('/^\/admin\/projects/'); ?>">
+                <?php echo $this->Html->link(__('Projects'), array('controller' => 'projects', 'action' => 'index', 'admin' => true), array('class' => 'icon icon-hammer')); ?>
             </li>
- -->            <li class="<?php echo $this->Html->highlight2('/^\/admin\/adminusers/'); ?>">
+            <li class="<?php echo $this->Html->highlight2('/^\/admin\/adminusers/'); ?>">
                 <?php echo $this->Html->link(__('Admin Users'), array('controller' => 'adminusers', 'action' => 'index', 'admin' => true), array('class' => 'icon icon-users-alt')); ?>
             </li>
 
@@ -72,8 +73,8 @@
         </div>
 
         <footer>
-            <p class="pull-right">William Byrne. &copy; <?php echo date('Y'); ?></p>
-            <p>Licensed for use by <?php echo Configure::read('Company.name'); ?>, developed by <strong>William Byrne</strong>.</p>
+            <p class="pull-right"><?php echo Configure::read('Developer.name'); ?>. &copy; <?php echo date('Y'); ?></p>
+            <p>Licensed for use by <?php echo Configure::read('Company.name'); ?>, developed by <strong><?php echo Configure::read('Developer.name'); ?></strong>.</p>
         </footer>
     </div>
 
